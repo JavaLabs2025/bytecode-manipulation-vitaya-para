@@ -1,0 +1,7 @@
+{
+  "maxInheritanceDepth" : 2,
+  "avgInheritanceDepth" : 1.5,
+  "abcMetric" : 6,
+  "avgOverriddenMethods" : 0.6,
+  "avgFieldsPerClass" : 0.7
+}

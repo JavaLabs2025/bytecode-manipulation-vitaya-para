@@ -18,3 +18,16 @@
 Гайд по использованию ASM: https://asm.ow2.io/asm4-guide.pdf
 
 Дополнительное (необязательное задание): сделайте агента для сбора покрытия по строчкам
+
+Запуск
+
+```bash
+# Байт-код
+./gradlew run --args="print src/main/resources/sample.jar"
+
+# Метрики
+./gradlew run --args="metrics src/main/resources/sample.jar"
+
+# Метрики в файл
+./gradlew run --args="metrics src/main/resources/sample.jar src/resources/output.json"
+```
