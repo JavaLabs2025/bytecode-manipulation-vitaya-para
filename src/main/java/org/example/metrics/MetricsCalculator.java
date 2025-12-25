@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class MetricsCalculator {
 
-    public record MetricsResult(int maxInheritanceDepth, double avgInheritanceDepth, int abcMetric,
+    public record MetricsResult(int maxInheritanceDepth, double avgInheritanceDepth, double abcMetric,
                                 double avgOverriddenMethods, double avgFieldsPerClass) {
 
     }
@@ -31,7 +31,7 @@ public class MetricsCalculator {
         int sumDepth = 0;
         int totalOverrides = 0;
         int totalFields = 0;
-        int totalAbc = 0;
+        double totalAbc = 0;
 
         for (ClassNode classNode : classes.values()) {
             int depth = inheritanceAnalyzer.calculateInheritanceDepth(classNode);
@@ -46,7 +46,7 @@ public class MetricsCalculator {
             int fields = fieldAnalyzer.countFields(classNode);
             totalFields += fields;
 
-            int abc = complexityAnalyzer.calculateAbcForClass(classNode);
+            double abc = complexityAnalyzer.calculateAbcForClass(classNode);
             totalAbc += abc;
         }
 

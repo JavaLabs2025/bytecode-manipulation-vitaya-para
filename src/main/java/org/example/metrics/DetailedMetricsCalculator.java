@@ -27,7 +27,7 @@ public class DetailedMetricsCalculator {
         int sumDepth = 0;
         int totalOverrides = 0;
         int totalFields = 0;
-        int totalAbc = 0;
+        double totalAbc = 0;
 
         for (ClassNode classNode : classes.values()) {
             System.out.println("class: " + classNode.name);
@@ -55,7 +55,7 @@ public class DetailedMetricsCalculator {
             }
             totalFields += fields;
 
-            int abc = complexityAnalyzer.calculateAbcForClass(classNode);
+            double abc = complexityAnalyzer.calculateAbcForClass(classNode);
             System.out.println("abc: " + abc);
             totalAbc += abc;
 
